@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func Day01() {
+func Day01() bool {
 	input := utils.ImportInputLines(1)
 
 	total1, total2 := 0, 0
@@ -56,4 +56,5 @@ func Day01() {
 
 	println(total1)
 	println(total2)
+	return true
 }

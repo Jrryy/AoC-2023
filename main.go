@@ -8,8 +8,32 @@ import (
 	"time"
 )
 
-var days = []func(){
+var days = []func() bool{
 	challenges.Day01,
+	challenges.Day02,
+	challenges.Day03,
+	challenges.Day04,
+	challenges.Day05,
+	challenges.Day06,
+	challenges.Day07,
+	challenges.Day08,
+	challenges.Day09,
+	challenges.Day10,
+	challenges.Day11,
+	challenges.Day12,
+	challenges.Day13,
+	challenges.Day14,
+	challenges.Day15,
+	challenges.Day16,
+	challenges.Day17,
+	challenges.Day18,
+	challenges.Day19,
+	challenges.Day20,
+	challenges.Day21,
+	challenges.Day22,
+	challenges.Day23,
+	challenges.Day24,
+	challenges.Day25,
 }
 
 func main() {
@@ -24,10 +48,11 @@ func main() {
 		for day, challenge := range days {
 			fmt.Printf("Day %02d\n", day+1)
 			start := time.Now()
-			challenge()
-			elapsed := time.Since(start)
-			fmt.Printf("Elapsed: %v\n", elapsed)
-			totalElapsed += elapsed
+			if done := challenge(); done {
+				elapsed := time.Since(start)
+				fmt.Printf("Elapsed: %v\n", elapsed)
+				totalElapsed += elapsed
+			}
 		}
 		fmt.Printf("Total elapsed time: %v\n", totalElapsed)
 	} else if *dayFlag > len(days) {
