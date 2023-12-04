@@ -52,6 +52,8 @@ func main() {
 				elapsed := time.Since(start)
 				fmt.Printf("Elapsed: %v\n", elapsed)
 				totalElapsed += elapsed
+			} else {
+				println("Unsolved")
 			}
 		}
 		fmt.Printf("Total elapsed time: %v\n", totalElapsed)
