@@ -65,6 +65,17 @@ func Abs(a int) int {
 	return a
 }
 
+func GCD(a, b int) int {
+	if b == 0 {
+		return a
+	}
+	return GCD(b, a%b)
+}
+
+func LCM(a, b int) int {
+	return (a * b) / GCD(a, b)
+}
+
 func Contains[T comparable](array []T, item T) bool {
 	for _, _item := range array {
 		if _item == item {
