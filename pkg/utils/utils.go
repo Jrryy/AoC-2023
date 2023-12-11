@@ -34,6 +34,26 @@ func ImportInputLinesInt(day int) []int {
 	return input
 }
 
+func ImportInputLinesInts(day int) [][]int {
+	rawInput := ImportInputLines(day)
+	input := make([][]int, len(rawInput))
+
+	for i, line := range rawInput {
+		numbersRaw := strings.Fields(line)
+		input[i] = make([]int, len(numbersRaw))
+
+		for j, rawNumber := range numbersRaw {
+			number, err := strconv.Atoi(rawNumber)
+			if err != nil {
+				panic(err)
+			}
+			input[i][j] = number
+		}
+	}
+
+	return input
+}
+
 func ImportInputMatrixChars(day int) [][]rune {
 	rawInputLines := ImportInputLines(day)
 	input := make([][]rune, len(rawInputLines))
