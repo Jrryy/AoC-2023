@@ -104,12 +104,3 @@ func Contains[T comparable](array []T, item T) bool {
 	}
 	return false
 }
-
-func PrintMatrix(matrix [][]any) {
-	for _, row := range matrix {
-		for _, item := range row {
-			fmt.Print(item)
-		}
-		println()
-	}
-}
